@@ -4,10 +4,11 @@ import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
 import initStore from './store/store.js';
 
+import Catalog from './components/Catalog/Catalog.jsx';
+
 ReactDom.render(
    <Provider store={ initStore() }>
-
-      <h1>start</h1>
+      <Catalog />
    </Provider>
    ,
    document.getElementById('app')
