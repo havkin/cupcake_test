@@ -1,0 +1,14 @@
+.product-item{
+   display: flex;
+   flex-direction: column;
+   width: 300px;
+   border: 2px solid black;
+   border-radius: 5px;
+   overflow: hidden;
+   margin: 20px 0;
+}
+
+.product-item_desc {
+   border-top: 1px solid #c0c0c040;
+   padding: 15px
+}
