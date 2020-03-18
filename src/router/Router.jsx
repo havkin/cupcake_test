@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Catalog from '../components/Catalog/Catalog.jsx';
 import BuyItem from '../components/BuyItem/BuyItem.jsx';
+import Cart from '../components/Cart/Cart.jsx';
 
 export default class Router extends React.Component {
    render() {
