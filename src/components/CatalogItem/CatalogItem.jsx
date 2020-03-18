@@ -3,7 +3,7 @@ import './CatalogItem.css';
 
 const CatalogItem = props => {
    return (
-      <div className="product-item">
+      <div className="product-item" onClick={props.onClick}>
          <img 
             src={props.item.image}
             alt="product image"

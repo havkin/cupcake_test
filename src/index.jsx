@@ -2,14 +2,20 @@ import React from 'react';
 import ReactDom from 'react-dom';
 
 import { Provider } from 'react-redux';
-import initStore from './store/store.js';
+import initStore, { history } from './store/store.js';
 
-import Catalog from './components/Catalog/Catalog.jsx';
+import { ConnectedRouter } from 'connected-react-router';
+import Router from './router/Router.jsx';
+
 
 ReactDom.render(
-   <Provider store={ initStore() }>
-      <Catalog />
+
+   <Provider store={initStore()}>
+      <ConnectedRouter history={history}>
+         <Router />
+      </ConnectedRouter>
    </Provider>
+
    ,
    document.getElementById('app')
 );

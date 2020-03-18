@@ -18,9 +18,12 @@
   },
   "homepage": "https://github.com/havkin/cupcake_test#readme",
   "dependencies": {
+    "connected-react-router": "^6.8.0",
+    "history": "^4.10.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
     "redux": "^4.0.5"
   },
   "devDependencies": {

@@ -1,4 +1,5 @@
 import React from 'react';
+import './BuyItem.css';
 
 class BuyItemModal extends React.Component {
 
