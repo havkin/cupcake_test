@@ -6,9 +6,27 @@ import { push } from 'connected-react-router';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
+import { addItemToCart } from '../../store/actions/cart_action';
+
 class BuyItemModal extends React.Component {
    state = {
       counter: 1,
+   }
+
+   incCounter = () => {
+      this.setState ({
+         counter: this.state.counter + 1
+      });
+   }
+
+   decCounter = () => {
+      this.setState ({
+         counter: this.state.counter - 1
+      });
+   }
+
+   addItem = (item) => {
+      this.props.addItemToCart( item, this.state.counter );
    }
 
    render() {
@@ -44,15 +62,19 @@ class BuyItemModal extends React.Component {
                <footer className="modal-footer">
                   <div className="counter">
                      <button
+                        disabled={this.state.counter === 1}
                         className="counter-btn"
+                        onClick={this.decCounter}
                      >-</button>
                      <span className="counter-display">{this.state.counter}</span>
                      <button
                         className="counter-btn"
+                        onClick={this.incCounter}
                      >+</button>
                   </div>
                   <button 
                      className="modal-add-btn"
+                     onClick={() => this.addItem (book)}
                   >Add to cart</button>
                </footer>
             </div>
@@ -65,6 +87,6 @@ const mapStateToProps = ({ catalogReducer, }) => ({
    catalog: catalogReducer.catalog,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({ push }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ addItemToCart, push }, dispatch);
 
 export default connect( mapStateToProps, mapDispatchToProps )( BuyItemModal );
