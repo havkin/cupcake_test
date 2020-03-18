@@ -11,10 +11,10 @@ class Cart extends React.Component {
 
    render () {
 
-      const itemArray = this.props.cart.map( (item, index) => {
+      const itemArray = this.props.cart.map( item => {
          return (
             <CartItem
-               key={ index }
+               key={ item.id }
                item={ item }
             />
          );

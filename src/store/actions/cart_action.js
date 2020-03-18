@@ -5,3 +5,11 @@ export const addItemToCart = (item, qnt) => ({
    item,
    qnt
 });
+
+export const DEL_ITEM = '@@cart/DEL_ITEM';
+
+export const delItemFromCart = (itemId) => ({
+   type: DEL_ITEM,
+   itemId,
+
+});

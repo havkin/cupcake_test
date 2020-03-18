@@ -1,3 +1,35 @@
 .cart-item {
    display: flex;
+   max-width: 80%;
+   margin: 10px auto;
+   border-bottom: 1px solid #000;
+   padding: 10px 20px;
+}
+
+.cart-item h4 {
+   margin: 0;
+   flex-grow: 1;
+}
+
+.cart-item__price {
+   width: 50px;
+}
+
+.cart-item__qnt {
+   width: 50px;
+}
+
+.cart-item__total {
+   width: 150px;
+}
+
+.cart-item__remove-btn {
+   width: 80px;
+   height: 20px;
+   border-radius: 5px;
+}
+
+.cart-item__remove-btn:hover {
+   cursor: pointer;
+   background-color: #ddd;
 }
