@@ -15,7 +15,7 @@ export default class Router extends React.Component {
             />
             <Route 
                exact
-               path={ '/book' }
+               path={ '/book/:bookId' }
                component={ BuyItem }
             />
          </Switch>

@@ -18,7 +18,7 @@ class Catalog extends React.Component {
             <CatalogItem
                key={ item.isbn13 }
                item={ item }
-               onClick={() => this.props.push('/book')}
+               onClick={() => this.props.push(`/book/${item.isbn13}`)}
             />
          );
       });
