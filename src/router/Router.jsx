@@ -1,22 +1,27 @@
-import React from 'react'; 
+import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Catalog from '../components/Catalog/Catalog.jsx';
 import BuyItem from '../components/BuyItem/BuyItem.jsx';
 
 export default class Router extends React.Component {
-   render() { 
+   render() {
       return (
          <Switch>
-            <Route 
+            <Route
                exact
-               path={ '/' }
-               component={ Catalog }
+               path={'/'}
+               component={Catalog}
             />
-            <Route 
+            <Route
                exact
-               path={ '/book/:bookId' }
-               component={ BuyItem }
+               path={'/book/:bookId'}
+               component={BuyItem}
+            />
+            <Route
+               exact
+               path={'/cart'}
+               component={Cart}
             />
          </Switch>
       );

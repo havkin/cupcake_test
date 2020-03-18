@@ -1,0 +1,22 @@
+.header {
+   display: flex;
+   max-width: 80%;
+   justify-content: space-between;
+   margin: 0 auto;
+   padding: 20px 50px;
+   background-color: antiquewhite;
+}
+
+.header h1 {
+   margin: 0;
+}
+
+.cart-btn {
+   width: 100px;
+   border-radius: 5px;
+}
+
+.cart-btn:hover {
+   cursor: pointer;
+   background-color: #ddd;
+}

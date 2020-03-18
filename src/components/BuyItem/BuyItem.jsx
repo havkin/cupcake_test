@@ -41,7 +41,7 @@ class BuyItemModal extends React.Component {
                   <h3 className="modal-title">{ book.title }</h3>
                   <button
                      className="modal-close-btn"
-                     onClick={() => this.props.push('/') }
+                     onClick={ () => this.props.push('/') }
                   >Back to catalog</button>
                </header>
 

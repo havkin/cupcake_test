@@ -7,11 +7,13 @@ import initStore, { history } from './store/store.js';
 import { ConnectedRouter } from 'connected-react-router';
 import Router from './router/Router.jsx';
 
+import Header from './components/Header/Header.jsx';
 
 ReactDom.render(
 
    <Provider store={initStore()}>
       <ConnectedRouter history={history}>
+         <Header />
          <Router />
       </ConnectedRouter>
    </Provider>
