@@ -17,7 +17,7 @@ class Cart extends React.Component {
          const qnt = +item.qnt;
          const price = +item.price;
          return acc = acc + ( qnt * price );
-      }, 0);
+      }, 0).toFixed(2);
 
       const itemArray = this.props.cart.map(item => {
          return (
