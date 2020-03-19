@@ -11,5 +11,12 @@ export const DEL_ITEM = '@@cart/DEL_ITEM';
 export const delItemFromCart = (itemId) => ({
    type: DEL_ITEM,
    itemId,
+});
 
+export const UPD_ITEM = '@@cart/UPD_ITEM';
+
+export const updItemQnt = (itemId, qnt) => ({
+   type: UPD_ITEM,
+   itemId,
+   qnt,
 });

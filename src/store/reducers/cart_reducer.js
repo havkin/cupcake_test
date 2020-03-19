@@ -3,6 +3,7 @@ import update from 'immutability-helper';
 import {
    ADD_ITEM,
    DEL_ITEM,
+   UPD_ITEM,
 } from '../actions/cart_action';
 
 const initialStore = {
@@ -41,6 +42,13 @@ export default function cartReducer(store = initialStore, action) {
                   [index, 1]
                ] 
                
+            }
+         });
+      }
+      case UPD_ITEM: {
+         const index = store.cart.findIndex( item => item.id === action.itemId);
+         return update(store, {
+            cart: { [index]: {qnt: {$set: action.qnt}}
             }
          });
       }
