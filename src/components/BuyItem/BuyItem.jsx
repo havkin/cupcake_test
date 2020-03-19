@@ -11,6 +11,7 @@ import { addItemToCart } from '../../store/actions/cart_action';
 class BuyItemModal extends React.Component {
    state = {
       counter: 1,
+      qntInStock: 3,
    }
 
    incCounter = () => {
@@ -28,6 +29,8 @@ class BuyItemModal extends React.Component {
    addItem = (item) => {
       this.props.addItemToCart( item, this.state.counter );
    }
+
+   isAvailable = () => this.state.counter <= this.state.qntInStock
 
    render() {
       const bookId = this.props.match.params.bookId;
@@ -72,10 +75,16 @@ class BuyItemModal extends React.Component {
                         onClick={this.incCounter}
                      >+</button>
                   </div>
-                  <button 
+                  <button
+                     disabled={ !this.isAvailable() }
                      className="modal-add-btn"
                      onClick={() => this.addItem (book)}
                   >Add to cart</button>
+                  <div 
+                     className={ this.isAvailable() ? "no-warning-msg" : "warning-msg" }
+                  >
+                     No enough goods in stock
+                  </div>
                </footer>
             </div>
          </div>

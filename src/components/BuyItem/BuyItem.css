@@ -57,6 +57,7 @@
 }
 
 .modal-footer {
+   position: relative;
    display: flex;
    justify-content: center;
    background-color: antiquewhite;
@@ -64,6 +65,7 @@
 }
 
 .counter {
+   position: relative;
    margin-right: 20px;
    padding: 5px 0;
 }
@@ -96,4 +98,17 @@
 .modal-add-btn:hover {
    cursor: pointer;
    background-color: #ddd;
+}
+
+.warning-msg {
+   position: absolute;
+   width: 100%;
+   left: 0;
+   top: -20px;
+   color: red;
+   text-align: center;
+}
+
+.no-warning-msg {
+   display: none;
 }
