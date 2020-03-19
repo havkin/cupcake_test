@@ -3,9 +3,7 @@ import update from 'immutability-helper';
 import { ADD_CATALOG } from '../actions/catalog_action';
 
 const initialStore = {
-   catalog: [
-
-   ]
+   catalog: []
 };
 
 export default function catalogReducer( store = initialStore, action ) {

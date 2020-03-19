@@ -12,6 +12,7 @@ class BuyItemModal extends React.Component {
    state = {
       counter: 1,
       qntInStock: 3,
+      isInCart: false,
    }
 
    incCounter = () => {
@@ -28,11 +29,19 @@ class BuyItemModal extends React.Component {
 
    addItem = (item) => {
       this.props.addItemToCart(item, this.state.counter);
+      this.props.push('/');
    }
 
    isAvailable = () => this.state.counter <= this.state.qntInStock
 
-   isInCart = (itemId) => this.props.cart.find(item => item.id === itemId)
+   componentDidMount() {
+      const bookId = this.props.match.params.bookId;
+      if (this.props.cart.find(item => item.id === bookId)) {
+         this.setState({
+            isInCart: true
+         });
+      }
+   }
 
    render() {
       const bookId = this.props.match.params.bookId;
@@ -65,7 +74,7 @@ class BuyItemModal extends React.Component {
                   </div>
                </div>
 
-                  { this.isInCart(book.isbn13)
+                  { this.state.isInCart
                      ? <p className="in-cart-msg">Book in cart already</p>
                      :<footer className="modal-footer">
                         <div className="counter">

@@ -7,14 +7,7 @@ import {
 } from '../actions/cart_action';
 
 const initialStore = {
-   cart: [
-      {
-         title:  "Learning C++ by Building Games with Unreal Engine 4, 2nd Edition",
-         price: "44.99",
-         id: "9781788476249",
-         qnt: 2,
-      }
-   ]
+   cart: []
 };
 
 export default function cartReducer(store = initialStore, action) {
