@@ -14,13 +14,21 @@ class Header extends React.Component {
             <button 
                className="cart-btn"
                onClick={ () => this.props.push('/cart') }
-            >Cart</button>
+            >
+               Cart
+      <div className="cart-btn__info">{ this.props.cart.length }</div>
+            </button>
          </div>
       );
    }
 
 }
 
+const mapStateToProps = ({ cartReducer, }) => ({
+   cart: cartReducer.cart,
+
+});
+
 const mapDispatchToProps = dispatch => bindActionCreators({ push }, dispatch);
 
-export default connect( null, mapDispatchToProps )(Header);
+export default connect( mapStateToProps, mapDispatchToProps )(Header);

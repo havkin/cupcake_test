@@ -38,7 +38,7 @@
    border-radius: 5px;
 }
 
-.close-btn:hover {
+.modal-close-btn:hover {
    cursor: pointer;
    background-color: #ddd;
 }

@@ -23,7 +23,7 @@ class Cart extends React.Component {
       return (
          <div>
             { this.props.cart.length === 0
-            ? <p>cart is empty</p>
+            ? <p className="empty-msg">cart is empty</p>
             : <ol>{ itemArray }</ol>
             }
          </div>
