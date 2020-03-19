@@ -56,6 +56,14 @@
    font-weight: bold;
 }
 
+.in-cart-msg {
+   display: flex;
+   justify-content: center;
+   background-color: antiquewhite;
+   padding: 10px;
+   font-size: 20px;
+}
+
 .modal-footer {
    position: relative;
    display: flex;
