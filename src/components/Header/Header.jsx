@@ -21,8 +21,21 @@ class Header extends React.Component {
          </div>
       );
    }
-
 }
+
+// const Header1 = () => {
+//    return (
+//       <div className="header">
+//             <h1>Cupcake Books</h1>
+//             <button 
+//                className="cart-btn"
+//             >
+//                Cart
+//       <div className="cart-btn__info">9</div>
+//             </button>
+//          </div>
+//    )
+// }
 
 const mapStateToProps = ({ cartReducer, }) => ({
    cart: cartReducer.cart,

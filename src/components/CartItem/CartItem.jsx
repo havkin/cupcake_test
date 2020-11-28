@@ -2,7 +2,7 @@ import React from 'react';
 import './CartItem.css';
 
 import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 
 import { delItemFromCart, updItemQnt } from '../../store/actions/cart_action';
 

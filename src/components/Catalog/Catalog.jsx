@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 
 import './Catalog.css';
 
-import CatalogItem from '../CatalogItem/CatalogItem.jsx';
+import CatalogItem from '../CatalogItem/CatalogItem';
 
 import { addCatalog } from '../../store/actions/catalog_action';
 

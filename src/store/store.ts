@@ -6,6 +6,10 @@ import initialReducers from './reducers';
 
 export const history = createBrowserHistory();
 
+const devTools = () => {
+   return (window as any).__REDUX_DEVTOOLS_EXTENSION__ ? (window as any).__REDUX_DEVTOOLS_EXTENSION__() : () => {}
+}
+
 export default function initStore() {
    let initialStore = {};
 
@@ -14,6 +18,6 @@ export default function initStore() {
       initialStore,
       compose(
          applyMiddleware(routerMiddleware(history)),
-         // window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : () => {},
+         devTools(),
       ));
 }
