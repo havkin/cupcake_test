@@ -4,18 +4,19 @@ import './Cart.css';
 import { useSelector } from 'react-redux';
 
 import CartItem from '../CartItem/CartItem';
+import { CartElement, Store } from '../types';
 
-const cart = (props) => {
-  const cart = useSelector(({ cartReducer }) => cartReducer.cart);
+const Cart: React.FC = (props: any) => {
+  const cart: any = useSelector<Store>(({ cartReducer }) => cartReducer.cart);
   const sum = cart
-    .reduce((acc, item) => {
+    .reduce((acc: number, item: CartElement) => {
       const qnt = +item.qnt;
       const price = +item.price;
       return (acc = acc + qnt * price);
     }, 0)
     .toFixed(2);
 
-  const itemArray = cart.map(item => {
+  const itemArray = cart.map((item: CartElement) => {
     return <CartItem key={item.id} item={item} />;
   });
 
@@ -36,4 +37,4 @@ const cart = (props) => {
   );
 };
 
-export default cart;
+export default Cart;

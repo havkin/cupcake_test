@@ -17,3 +17,15 @@ export type Book = {
 }
 
 export type Catalog = Book[]
+
+export type CartElement = {
+  qnt: string,
+  price: string,
+  id: number
+}
+
+export type Store = {
+  cartReducer: {
+    cart: CartElement[]
+  }
+}
