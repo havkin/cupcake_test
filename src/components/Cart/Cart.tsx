@@ -24,10 +24,7 @@ const Cart: React.FC = (props: any) => {
     <div>
       {cart.length === 0 ? <p className='empty-msg'>cart is empty</p> : <ol>{itemArray}</ol>}
       <footer className='cart-footer'>
-        <button 
-        className='modal-close-btn' 
-        onClick={() => props.history.push('/')}
-        >
+        <button className='modal-close-btn' onClick={() => props.history.push('/')}>
           Back to catalog
         </button>
         <p className='cart-summa'>Total summa: ${sum}</p>

@@ -4,32 +4,33 @@ import './CartItem.css';
 import { useDispatch } from 'react-redux';
 
 import { delItemFromCart, updItemQnt } from '../../store/actions/cart_action';
+import { CartItemProps } from '../types';
 
-const CartItem = props => {
+const CartItem: React.FC<CartItemProps> = ({item}) => {
   const dispatch = useDispatch();
   const qntInStock = 3;
 
-  const price = +props.item.price;
-  const qnt = +props.item.qnt;
-  const id = props.item.id;
+  const price = +item.price;
+  const qnt = +item.qnt;
+  const id = item.id;
 
-  const removeItem = id => {
+  const removeItem = (id: number): void => {
     dispatch(delItemFromCart(id));
   };
 
-  const incQnt = (qnt, id) => {
+  const incQnt = (qnt: number, id: number): void => {
     dispatch(updItemQnt(id, ++qnt));
   };
 
-  const decQnt = (qnt, id) => {
+  const decQnt = (qnt: number, id: number): void=> {
     dispatch(updItemQnt(id, --qnt));
   };
 
-  const isAvailable = () => props.item.qnt <= qntInStock;
+  const isAvailable = (): boolean => +item.qnt <= qntInStock;
 
   return (
     <li className='cart-item'>
-      <h4>{props.item.title}</h4>
+      <h4>{item.title}</h4>
       <div className='cart-item__price'>${price} </div>
       <div className='counter'>
         <button disabled={qnt === 1} className='counter-btn' onClick={() => decQnt(qnt, id)}>
