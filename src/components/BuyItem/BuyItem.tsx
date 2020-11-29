@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { addItemToCart } from '../../store/actions/cart_action';
 import { Book, CartElement, Store } from '../types';
+import { push } from 'connected-react-router';
 
 const BuyItemModal: React.FC = (props: any) => {
   const dispatch = useDispatch();
@@ -26,7 +27,7 @@ const BuyItemModal: React.FC = (props: any) => {
 
   const addItem = (item: Book): void=> {
     dispatch(addItemToCart(item, counter));
-    props.history.push('/');
+    dispatch(push('/'))
   };
 
   const isAvailable = (): boolean => counter <= qntInStock;
@@ -37,7 +38,7 @@ const BuyItemModal: React.FC = (props: any) => {
     if (cart.find((item: CartElement) => item.id === bookId)) {
       setIsInCart(true);
     }
-  });
+  }, []);
 
   const book: Book = catalog.find((item: Book) => item.isbn13 === bookId);
 
@@ -46,7 +47,7 @@ const BuyItemModal: React.FC = (props: any) => {
       <div className='modal'>
         <header className='modal-header'>
           <h3 className='modal-title'>{book.title}</h3>
-          <button className='modal-close-btn' onClick={() => props.history.push('/')}>
+          <button className='modal-close-btn' onClick={() => dispatch(push('/'))}>
             Back to catalog
           </button>
         </header>
