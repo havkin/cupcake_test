@@ -1,12 +1,11 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Catalog from '../components/Catalog/Catalog.jsx';
-import BuyItem from '../components/BuyItem/BuyItem.jsx';
-import Cart from '../components/Cart/Cart.jsx';
+import Catalog from '../components/Catalog/Catalog';
+import BuyItem from '../components/BuyItem/BuyItem';
+import Cart from '../components/Cart/Cart';
 
-export default class Router extends React.Component {
-   render() {
+const Router: React.FC= () => {
       return (
          <Switch>
             <Route
@@ -26,5 +25,6 @@ export default class Router extends React.Component {
             />
          </Switch>
       );
-   }
 }
+
+export default Router;
