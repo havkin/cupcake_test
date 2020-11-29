@@ -4,41 +4,42 @@ import './BuyItem.css';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { addItemToCart } from '../../store/actions/cart_action';
+import { Book, CartElement, Store } from '../types';
 
-const BuyItemModal = props => {
+const BuyItemModal: React.FC = (props: any) => {
   const dispatch = useDispatch();
   const qntInStock = 3;
 
   const [counter, setCounter] = useState(1);
   const [isInCart, setIsInCart] = useState(false);
 
-  const cart = useSelector(({ cartReducer }) => cartReducer.cart);
-  const catalog = useSelector(({ catalogReducer }) => catalogReducer.catalog);
+  const cart: any = useSelector<Store>(({ cartReducer }) => cartReducer.cart);
+  const catalog: any = useSelector<Store>(({ catalogReducer }) => catalogReducer.catalog);
 
-  const incCounter = () => {
+  const incCounter = (): void => {
     setCounter(prev => prev + 1);
   };
 
-  const decCounter = () => {
+  const decCounter = (): void => {
     setCounter(prev => prev - 1);
   };
 
-  const addItem = item => {
+  const addItem = (item: Book): void=> {
     dispatch(addItemToCart(item, counter));
     props.history.push('/');
   };
 
-  const isAvailable = () => counter <= qntInStock;
+  const isAvailable = (): boolean => counter <= qntInStock;
 
-  const bookId = props.match.params.bookId;
+  const bookId: string = props.match.params.bookId;
 
   useEffect(() => {
-    if (cart.find(item => item.id === bookId)) {
+    if (cart.find((item: CartElement) => item.id === bookId)) {
       setIsInCart(true);
     }
   });
 
-  const book = catalog.find(item => item.isbn13 === bookId);
+  const book: Book = catalog.find((item: Book) => item.isbn13 === bookId);
 
   return (
     <div className='modal-overlay'>

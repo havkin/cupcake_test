@@ -14,15 +14,15 @@ const CartItem: React.FC<CartItemProps> = ({item}) => {
   const qnt = +item.qnt;
   const id = item.id;
 
-  const removeItem = (id: number): void => {
+  const removeItem = (id: string): void => {
     dispatch(delItemFromCart(id));
   };
 
-  const incQnt = (qnt: number, id: number): void => {
+  const incQnt = (qnt: number, id: string): void => {
     dispatch(updItemQnt(id, ++qnt));
   };
 
-  const decQnt = (qnt: number, id: number): void=> {
+  const decQnt = (qnt: number, id: string): void=> {
     dispatch(updItemQnt(id, --qnt));
   };
 

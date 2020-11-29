@@ -21,7 +21,7 @@ export type Catalog = Book[]
 export type CartElement = {
   qnt: string,
   price: string,
-  id: number,
+  id: string,
   title: string
 }
 
@@ -32,5 +32,8 @@ export type CartItemProps = {
 export type Store = {
   cartReducer: {
     cart: CartElement[]
+  },
+  catalogReducer: {
+    catalog: Catalog
   }
 }
